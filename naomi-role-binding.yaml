@@ -1,0 +1,14 @@
+# This role binding allows "naomi" to deploy pods in the "development" namespace.
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: naomi-role-binding
+  namespace: development # This only grants permissions within the "development" namespace.
+subjects:
+- kind: User
+  name: naomi # Name is case sensitive
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: naomi-pod-role
+  apiGroup: rbac.authorization.k8s.io

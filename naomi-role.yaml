@@ -2,8 +2,8 @@ kind: Role
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   namespace: development
-  name: naomi-pod-role
+  name: naomi-role
 rules:
 - apiGroups: [""] # "" indicates the core API group
-  resources: ["pods"]
+  resources: ["services", "endpoints", "pods"]
   verbs: ["get", "watch", "list", "create", "update", "patch", "delete"]
